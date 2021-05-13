@@ -1,7 +1,8 @@
+const {webhookID, webhookToken} = require('./src/server/config.json');
 const {WebhookClient, MessageEmbed} = require("discord.js")
 
 //define the webhook we want to use by using the config settings
-const Hook = new WebhookClient('842506202558234636', 'Jq39D9gPJrVF1BixFndguv_1Hb7WQMXE8klQpkiU449omE4v18o1PVtP0ha1YEWIckZs')
+const Hook = new WebhookClient(webhookID, webhookToken)
 
 onNet('vMenu:SendMessageToPlayer', (recieverSrc, message) => {
     const senderSrc = source;
@@ -15,7 +16,7 @@ function logvMenuMsg (reciever, sender, message) {
         .addField('Sender:', `${sender} | ${GetPlayerName(sender)}`)
         .addField('Reciever:', `${reciever} | ${GetPlayerName(reciever)}`)
         .addField('Message:', message)
-        .setFooter("vMenu message log")
+        .setFooter("vMenu msg log | Made by Petrikov")
 
     Hook.send(embed);
 }
