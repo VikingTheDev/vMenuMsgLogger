@@ -1,4 +1,4 @@
-const {webhookID, webhookToken} = require('./src/server/config.json');
+const {webhookID, webhookToken} = require('./src/config.json');
 const {WebhookClient, MessageEmbed} = require("discord.js")
 
 //define the webhook we want to use by using the config settings
